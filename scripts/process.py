@@ -7,11 +7,10 @@ my_videos = [my_videos_folder + video for video in os.listdir(my_videos_folder) 
 
 for video in my_videos:
     print(f'Processing {video}...')
-    my_video = MgObject(video,skip=100)
-    my_video.motion().average()
+    Mg(video).motion().average()
     Mg(video).average()
     Mg(video).videograms()
-    Mg(video).waveform()
-    Mg(video).spectrogram()
-    Mg(video).tempogram()
+    Mg(video).audio.waveform()
+    Mg(video).audio.spectrogram()
+    Mg(video).audio.tempogram()
 
